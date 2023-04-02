@@ -7,7 +7,6 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // fazer uma conexão HTTP(protocolo pra se comunicar na web) e receber o body em json
-
         API api = API.IMDB_TOP_SERIES;
 
         String url = api.getUrl();
