@@ -1,4 +1,4 @@
-public record Content(String title, String urlImage, Double imDbRating){
+public record Content(String title, String urlImage, String imDbRating){
 
 }
 

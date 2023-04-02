@@ -8,12 +8,10 @@ public class App {
 
         // fazer uma conexão HTTP(protocolo pra se comunicar na web) e receber o body em json
 
-        // String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularMovies.json";
-        // ContentExtractor extractor = new IMDBContentExtractor();
-        
+        API api = API.IMDB_TOP_SERIES;
 
-        String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
-        ContentExtractor extractor = new NasaContentExtractor();
+        String url = api.getUrl();
+        ContentExtractor extractor = api.getExtractor();
         
         ClientHttp http = new ClientHttp();
         String json = http.searchData(url);
@@ -36,9 +34,9 @@ public class App {
             System.out.println("\n\n\u001b[37;1m \u001b[44;1m Title ->\u001b[m " + "\u001b[1m" + content.title() + "\u001b[m");
             System.out.println("\u001b[37;1m \u001b[40;1m Image ->\u001b[m" + " " + "\u001b[3m" + content.urlImage() + "\u001b[m");
 
-            if(url.length() == 93){
+            if(url.length() == 93 || url.length() == 90){
 
-                double parseDouble = content.imDbRating();
+                double parseDouble = Double.parseDouble(content.imDbRating());
                 int parseInt = (int) parseDouble;
                 System.out.print("\u001b[37;1m \u001b[44;1m Rating ->\u001b[m");
     
