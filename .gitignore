@@ -24,10 +24,11 @@ hs_err_pid*
 
 # vscode
 .vscode/
-/bin/
 
-# images
-Elvis.png
-Thor- Love and Thunder.png
-Top Gun- Maverick.png
+# java
+bin/
+lib/
+output/
+input/
+
 
