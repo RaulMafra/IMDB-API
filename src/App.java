@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // fazer uma conexão HTTP(protocolo pra se comunicar na web) e receber o body em json
-        API api = API.IMDB_TOP_SERIES;
+        API api = API.LANGUAGE;
 
         String url = api.getUrl();
         ContentExtractor extractor = api.getExtractor();
@@ -20,8 +20,9 @@ public class App {
         List<Content> contents = extractor.contentExtractor(json);
 
         StickersGenerator generator = new StickersGenerator();
-
-        for (int i = 0; i < 3; i++) {
+        
+        
+        for (int i = 0; i < 5; i++) {
 
             Content content = contents.get(i);
 
